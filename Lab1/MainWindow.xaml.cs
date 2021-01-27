@@ -35,6 +35,20 @@ namespace Lab1
             PopBand Name5 = new PopBand() { BandName = "Imagine Dragons", YearFormed = 2008, Members = "Dan Reynolds,Wayne Serman,Ben Mckee,Daniel Platzman" };
             PopBand Name6 = new PopBand() { BandName = "Take That", YearFormed = 1990, Members = "Gary Barlow,Howard Donald,Mark Owen,Robbie Williams,Jason Orange" };
 
+            Random rand = new Random();
+            Album Album1 = new Album() { Name = "The Razors Edge", YearOfRelease = rand.Next(1973, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album2 = new Album() { Name = "Back in Black", YearOfRelease = rand.Next(1973, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album3 = new Album() { Name = "A Head full of Dreams", YearOfRelease = rand.Next(1996, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album4 = new Album() { Name = "Parachutes", YearOfRelease = rand.Next(1996, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album5 = new Album() { Name = "The Lumineers", YearOfRelease = rand.Next(2005, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album6 = new Album() { Name = "Cleopatra", YearOfRelease = rand.Next(2005, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album7 = new Album() { Name = "Native", YearOfRelease = rand.Next(2002, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album8 = new Album() { Name = "Waking Up", YearOfRelease = rand.Next(2002, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album9 = new Album() { Name = "Night Visions", YearOfRelease = rand.Next(2008, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album10 = new Album() { Name = "Evolve", YearOfRelease = rand.Next(2008, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album11 = new Album() { Name = "Beautyful World", YearOfRelease = rand.Next(1990, 2021), Sales = rand.Next(1000000, 10000000) };
+            Album Album12 = new Album() { Name = "Never Forget", YearOfRelease = rand.Next(1990, 2021), Sales = rand.Next(1000000, 10000000) };
+
             Bands.Add(Name1);
             Bands.Add(Name2);
             Bands.Add(Name3);
