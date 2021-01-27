@@ -56,6 +56,19 @@ namespace Lab1
             Bands.Add(Name5);
             Bands.Add(Name6);
 
+            Name1.AlbumList.Add(Album1);
+            Name1.AlbumList.Add(Album2);
+            Name2.AlbumList.Add(Album3);
+            Name2.AlbumList.Add(Album4);
+            Name3.AlbumList.Add(Album5);
+            Name3.AlbumList.Add(Album6);
+            Name4.AlbumList.Add(Album7);
+            Name4.AlbumList.Add(Album8);
+            Name5.AlbumList.Add(Album9);
+            Name5.AlbumList.Add(Album10);
+            Name6.AlbumList.Add(Album11);
+            Name6.AlbumList.Add(Album12);
+
             Bands.Sort();
 
             Band_LBOX.ItemsSource = Bands;
@@ -79,6 +92,16 @@ namespace Lab1
             public override string ToString()
             {
                 return base.ToString() +" - Indie Band";
+            }
+        }
+
+        private void Band_LBOX_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Band SelectedBand = Band_LBOX.SelectedItem as Band;
+            if (SelectedBand != null)
+            {
+                Album_LBOX.ItemsSource = SelectedBand.AlbumList;
+                Topblock_TBLK.Text = string.Format($"Formed in {SelectedBand.YearFormed}" + $"\nMembers: {SelectedBand.Members}");
             }
         }
     }

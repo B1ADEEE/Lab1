@@ -11,16 +11,18 @@ namespace Lab1
         public string BandName { get; set; }
         public int YearFormed { get; set; }
         public string Members { get; set; }
+        public List<Album> AlbumList { get; set; }
 
         public Band(string bandname,int yearformed,string members)
         {
             BandName = bandname;
             YearFormed = yearformed;
             Members = members;
+            AlbumList = new List<Album>();
         }
         public Band()
         {
-
+            AlbumList = new List<Album>();
         }
         public override string ToString()
         {

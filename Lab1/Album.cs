@@ -24,7 +24,7 @@ namespace Lab1
         }
         public override string ToString()
         {
-            return string.Format($"{Name} - {YearOfRelease} - {Sales}");
+            return string.Format($"{Name} - {YearOfRelease} With {Sales} Total Sales");
         }
     }
 }
