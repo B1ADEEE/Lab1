@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    public class Band : IComparable
+    public abstract class Band : IComparable
     {
         public string BandName { get; set; }
         public int YearFormed { get; set; }

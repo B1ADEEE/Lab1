@@ -28,12 +28,12 @@ namespace Lab1
 
         private void Band_LBOX_Loaded(object sender, RoutedEventArgs e)
         {
-            Band Name1 = new Band() { BandName = "AC/DC" , YearFormed = 1973, Members = "Bon Scott,Angus Young,Malcolm Young,Cliff Williams,Phil Rudd" };
-            Band Name2 = new Band() { BandName = "ColdPlay", YearFormed = 1996, Members = "Chris Martin,Johnny Buckland,Guy Berryman,Will Champion,Phil Harvey" };
-            Band Name3 = new Band() { BandName = "The Lumineers", YearFormed = 2005, Members = "Wesley Schultz,Jeremiah Fraites" };
-            Band Name4 = new Band() { BandName = "One Republic", YearFormed = 2002, Members = "Ryan Tedder,Zach Filkins,Drew Brown,Brent Kutzie,Eddie Fisher, Brian Willett" };
-            Band Name5 = new Band() { BandName = "Imagine Dragons", YearFormed = 2008, Members = "Dan Reynolds,Wayne Serman,Ben Mckee,Daniel Platzman" };
-            Band Name6 = new Band() { BandName = "Take That", YearFormed = 1990, Members = "Gary Barlow,Howard Donald,Mark Owen,Robbie Williams,Jason Orange" };
+            RockBand Name1 = new RockBand() { BandName = "AC/DC" , YearFormed = 1973, Members = "Bon Scott,Angus Young,Malcolm Young,Cliff Williams,Phil Rudd" };
+            RockBand Name2 = new RockBand() { BandName = "ColdPlay", YearFormed = 1996, Members = "Chris Martin,Johnny Buckland,Guy Berryman,Will Champion,Phil Harvey" };
+            IndieBand Name3 = new IndieBand() { BandName = "The Lumineers", YearFormed = 2005, Members = "Wesley Schultz,Jeremiah Fraites" };
+            PopBand Name4 = new PopBand() { BandName = "One Republic", YearFormed = 2002, Members = "Ryan Tedder,Zach Filkins,Drew Brown,Brent Kutzie,Eddie Fisher, Brian Willett" };
+            PopBand Name5 = new PopBand() { BandName = "Imagine Dragons", YearFormed = 2008, Members = "Dan Reynolds,Wayne Serman,Ben Mckee,Daniel Platzman" };
+            PopBand Name6 = new PopBand() { BandName = "Take That", YearFormed = 1990, Members = "Gary Barlow,Howard Donald,Mark Owen,Robbie Williams,Jason Orange" };
 
             Bands.Add(Name1);
             Bands.Add(Name2);
@@ -42,6 +42,30 @@ namespace Lab1
             Bands.Add(Name5);
             Bands.Add(Name6);
 
+            Bands.Sort();
+
+            Band_LBOX.ItemsSource = Bands;
+        }
+        public class RockBand : Band
+        {
+            public override string ToString()
+            {
+                return base.ToString() + " - Rock Band"; 
+            }
+        }
+        public class  PopBand : Band
+        {
+            public override string ToString()
+            {
+                return base.ToString() + " - Pop band";
+            }
+        }
+        public class IndieBand : Band
+        {
+            public override string ToString()
+            {
+                return base.ToString() +" - Indie Band";
+            }
         }
     }
 }
