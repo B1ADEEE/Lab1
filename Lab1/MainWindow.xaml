@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ListBox x:Name="Band_LBOX" HorizontalAlignment="Left" Height="253" Margin="80,138,0,0" VerticalAlignment="Top" Width="187" Loaded="Band_LBOX_Loaded" SelectionChanged="Band_LBOX_SelectionChanged"/>
-        <ComboBox x:Name="DropBox_COMBO" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="147,84,0,0"/>
+        <ComboBox x:Name="DropBox_COMBO" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="147,84,0,0" SelectionChanged="DropBox_COMBO_SelectionChanged"/>
         <Label Content="Genre" HorizontalAlignment="Left" Margin="80,80,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="BANDS" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Wide Latin"/>
         <Label Content="Band Information" HorizontalAlignment="Left" Margin="372,35,0,0" VerticalAlignment="Top" FontFamily="Wide Latin" FontSize="20"/>

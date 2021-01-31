@@ -28,6 +28,9 @@ namespace Lab1
 
         private void Band_LBOX_Loaded(object sender, RoutedEventArgs e)
         {
+            string[] genres = { "All", "Rock", "Pop", "Indie" };
+            DropBox_COMBO.ItemsSource = genres;
+            
             RockBand Name1 = new RockBand() { BandName = "AC/DC" , YearFormed = 1973, Members = "Bon Scott,Angus Young,Malcolm Young,Cliff Williams,Phil Rudd" };
             RockBand Name2 = new RockBand() { BandName = "ColdPlay", YearFormed = 1996, Members = "Chris Martin,Johnny Buckland,Guy Berryman,Will Champion,Phil Harvey" };
             IndieBand Name3 = new IndieBand() { BandName = "The Lumineers", YearFormed = 2005, Members = "Wesley Schultz,Jeremiah Fraites" };
@@ -102,6 +105,42 @@ namespace Lab1
             {
                 Album_LBOX.ItemsSource = SelectedBand.AlbumList;
                 Topblock_TBLK.Text = string.Format($"Formed in {SelectedBand.YearFormed}" + $"\nMembers: {SelectedBand.Members}");
+            }
+        }
+
+        private void DropBox_COMBO_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedGenre = DropBox_COMBO.SelectedItem as string;
+            List<Band> filteredList = new List<Band>();
+            switch(selectedGenre)
+            {
+                case "All":
+                    Band_LBOX.ItemsSource = Bands;
+                    break;
+                case "Rock":
+                    foreach (Band band in Bands)
+                    {
+                        if (band is RockBand)
+                            filteredList.Add(band);
+                    }
+                    Band_LBOX.ItemsSource = filteredList;
+                    break;
+                case "Pop":
+                    foreach (Band band in Bands)
+                    {
+                        if (band is PopBand)
+                            filteredList.Add(band);
+                    }
+                    Band_LBOX.ItemsSource = filteredList;
+                    break;
+                case "Indie":
+                    foreach(Band band in Bands)
+                    {
+                        if (band is IndieBand)
+                            filteredList.Add(band);
+                    }
+                    Band_LBOX.ItemsSource = filteredList;
+                    break;
             }
         }
     }
