@@ -143,5 +143,13 @@ namespace Lab1
                     break;
             }
         }
+
+        private void Save_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\joshs\Desktop\OOD_2021\Lab1\SaveFile.txt", true))        //Change this to the SaveFile.txt Filepath on your pc
+            {
+                file.WriteLine(Album_LBOX.SelectedItem);
+            }
+        }
     }
 }
