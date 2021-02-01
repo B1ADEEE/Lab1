@@ -11,6 +11,7 @@ namespace Lab1
         public string Name { get; set; }
         public int YearOfRelease { get; set; }
         public int Sales { get; set; }
+        public DateTime YearsSinceRelease { get; set; }
 
         public Album(string name, int yearofrelease, int sales)
         {
@@ -24,7 +25,10 @@ namespace Lab1
         }
         public override string ToString()
         {
-            return string.Format($"{Name} - {YearOfRelease} With {Sales} Total Sales");
+            YearsSinceRelease = DateTime.Now;
+            YearsSinceRelease = YearsSinceRelease.AddYears(-YearOfRelease);
+            int CalcYearRelease = YearsSinceRelease.Year;
+            return string.Format($"{Name} - {YearOfRelease} With {Sales} Total Sales. Its been {CalcYearRelease} Years since Release");
         }
     }
 }
